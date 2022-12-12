@@ -1,14 +1,24 @@
 import React, { Children } from 'react';
 import styles from '../styles/modules/button.module.scss';
+import { getClasses } from '../utils/getClasses';
 
+// key(primary): value(primary)
+// this is an object because {}
 const buttonTypes = {
   primary: 'primary',
   secondary: 'secondary',
 };
 
-function Button({ children, variant = 'primary' }) {
+function Button({ children, type, variant, ...rest }) {
   return (
-    <button className={styles.button} type="button">
+    <button
+      className={getClasses([
+        styles.button,
+        styles[`button--${buttonTypes[variant]}`],
+      ])}
+      type={type === 'submit' ? 'submit' : 'button'}
+      {...rest}
+    >
       {children}
     </button>
   );

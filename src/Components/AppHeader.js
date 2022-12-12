@@ -5,7 +5,7 @@ function AppHeader() {
   return (
     <div>
       <h1>Hello from header</h1>
-      <Button>Click me</Button>
+      <Button variant="primary">Click me</Button>
     </div>
   );
 }
