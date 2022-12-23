@@ -50,6 +50,7 @@
 		]
 	},
 	"devDependencies": {
+		"babel-plugin-styled-components": "^2.0.7",
 		"eslint-config-wesbos": "^3.0.2"
 	}
 }
