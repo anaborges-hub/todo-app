@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: var(--bg-2);
-  max-width: 500px;
   width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  border-radius: 8px;
-  position: relative;
+`;
+
+export const Wrapper = styled.div`
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
 `;
