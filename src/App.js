@@ -2,9 +2,10 @@ import React from 'react';
 import { Toaster } from 'react-hot-toast';
 // import AppContent from './Components/AppContent';
 // import AppHeader from './Components/AppHeader';
-import PageTitle from './Components/PageTitle';
+// import PageTitle from './Components/PageTitle/PageTitle';
 // import { Container, Wrapper } from './Styled/Container';
 import Container from './Components/Container/Container';
+import PageTitle from './Components/PageTitle/PageTitle';
 import { GlobalStyle } from './Styled/globalStyle';
 
 function App() {

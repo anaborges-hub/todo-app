@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Button, { SelectButton } from './Button';
-import styles from '../styles/modules/app.module.scss';
-import ToDoModel from './ToDoModel';
+import Button, { SelectButton } from '../Button';
+import ToDoModel from '../ToDoModel';
+import { StyledHeader } from './header.styles';
 
 function AppHeader() {
   const [modelOpen, setModelOpen] = useState(false);
   return (
-    <div className={styles.appHeader}>
+    <StyledHeader>
       <Button variant="primary" onClick={() => setModelOpen(true)}>
         Add task
       </Button>
@@ -16,7 +16,7 @@ function AppHeader() {
         <option value="complete">Complete</option>
       </SelectButton>
       <ToDoModel type="add" modelOpen={modelOpen} setModelOpen={setModelOpen} />
-    </div>
+    </StyledHeader>
   );
 }
 
