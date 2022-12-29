@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const globalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   *,
   *::after,
   *::before {
@@ -37,5 +37,4 @@ export const globalStyle = createGlobalStyle`
     max-width: 1200px;
     margin: 0 auto;
   }
-
-  `;
+`;
