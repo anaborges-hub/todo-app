@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button, { SelectButton } from '../Button/Button';
 // import ToDoModel from '../TodoModal/ToDoModal';
-import ToDoModel from '../ToDoModel';
+import ToDoModal from '../ToDoModal';
 import { StyledHeader } from './header.styles';
 
 function AppHeader() {
@@ -16,7 +16,7 @@ function AppHeader() {
         <option value="incomplete">Incomplete</option>
         <option value="complete">Complete</option>
       </SelectButton>
-      <ToDoModel type="add" modelOpen={modelOpen} setModelOpen={setModelOpen} />
+      <ToDoModal type="add" modelOpen={modelOpen} setModelOpen={setModelOpen} />
     </StyledHeader>
   );
 }

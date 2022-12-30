@@ -9,7 +9,7 @@ import styles from '../../styles/modules/todoItem.module.scss';
 import { getClasses } from '../../utils/getClasses';
 import CheckButton from '../CheckButton';
 // import ToDoModel from '../TodoModal/ToDoModal';
-import ToDoModel from '../ToDoModel';
+import ToDoModal from '../ToDoModal';
 import {
   StyledItem,
   TodoDetails,
@@ -72,7 +72,7 @@ function TodoItem({ todo }) {
           </div>
         </StyledTodoActions>
       </StyledItem>
-      <ToDoModel
+      <ToDoModal
         type="update"
         todo={todo}
         modalOpen={updateModelOpen}

@@ -8,7 +8,7 @@ import { addTodo, updateTodo } from '../slices/todoSlice';
 import styles from '../styles/modules/modal.module.scss';
 import Button from './Button/Button';
 
-function ToDoModel({ type, modelOpen, setModelOpen, todo }) {
+function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
   const dispatch = useDispatch();
@@ -114,4 +114,4 @@ function ToDoModel({ type, modelOpen, setModelOpen, todo }) {
   );
 }
 
-export default ToDoModel;
+export default ToDoModal;
