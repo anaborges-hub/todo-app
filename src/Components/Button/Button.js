@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 // import styles from '../styles/modules/button.module.scss';
 import { StyledButton, StyledSelect } from './button.styles';
 
@@ -9,7 +9,7 @@ import { StyledButton, StyledSelect } from './button.styles';
 //   secondary: 'secondary',
 // };
 
-function Button({ children, type, variant, ...rest }) {
+function Button({ type, variant = 'primary', children, ...rest }) {
   return (
     <StyledButton type={type === 'submit' ? 'submit' : 'button'} {...rest}>
       {children}
@@ -17,8 +17,12 @@ function Button({ children, type, variant, ...rest }) {
   );
 }
 
-function SelectButton({ children, ...rest }) {
-  return <StyledSelect>{children}</StyledSelect>;
+function SelectButton({ children, id, ...rest }) {
+  return (
+    <StyledSelect id={id} {...rest}>
+      {children}
+    </StyledSelect>
+  );
 }
 
 export { SelectButton };

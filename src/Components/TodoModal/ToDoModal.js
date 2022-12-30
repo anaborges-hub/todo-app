@@ -7,6 +7,15 @@ import { v4 as uuid } from 'uuid';
 import { addTodo, updateTodo } from '../../slices/todoSlice';
 import styles from '../../styles/modules/modal.module.scss';
 import Button from '../Button/Button';
+import { StyledButton } from '../Button/button.styles';
+import {
+  ModalBtnContainer,
+  ModalCloseButton,
+  ModalContainer,
+  ModalForm,
+  ModalFormTitle,
+  ModalWrapper,
+} from './modal.styles';
 
 function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
   const [title, setTitle] = useState('');
@@ -60,21 +69,20 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
 
   return (
     modelOpen && (
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <div
-            className={styles.closeButton}
+      <ModalWrapper>
+        <ModalContainer>
+          <ModalCloseButton
             onClick={() => setModelOpen(false)}
             onKeyDown={() => setModelOpen(false)}
             tabIndex={0}
             role="button"
           >
             <MdOutlineClose />
-          </div>
-          <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-            <h1 className={styles.formTitle}>
+          </ModalCloseButton>
+          <ModalForm onSubmit={(e) => handleSubmit(e)}>
+            <ModalFormTitle>
               {type === 'add' ? 'Add' : 'Update'} Task
-            </h1>
+            </ModalFormTitle>
             <label htmlFor="title">
               Title
               <input
@@ -95,21 +103,21 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
                 <option value="complete">Complete</option>
               </select>
             </label>
-            <div className={styles.buttonContainer}>
-              <Button type="submit" variant="primary">
+            <ModalBtnContainer>
+              <StyledButton type="submit" variant="primary">
                 {type === 'add' ? 'Add Task' : 'Update Task'}
-              </Button>
-              <Button
+              </StyledButton>
+              <StyledButton
                 variant="secondary"
                 onClick={() => setModelOpen(false)}
                 onKeyDown={() => setModelOpen(false)}
               >
                 Cancel
-              </Button>
-            </div>
-          </form>
-        </div>
-      </div>
+              </StyledButton>
+            </ModalBtnContainer>
+          </ModalForm>
+        </ModalContainer>
+      </ModalWrapper>
     )
   );
 }
