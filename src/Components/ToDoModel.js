@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addTodo, updateTodo } from '../slices/todoSlice';
 import styles from '../styles/modules/modal.module.scss';
-import Button from './Button';
+import Button from './Button/Button';
 
 function ToDoModel({ type, modelOpen, setModelOpen, todo }) {
   const [title, setTitle] = useState('');

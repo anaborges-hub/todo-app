@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button, { SelectButton } from '../Button';
+import Button from '../Button/Button';
 import ToDoModel from '../ToDoModel';
 import { StyledHeader } from './header.styles';
 
@@ -10,11 +10,11 @@ function AppHeader() {
       <Button variant="primary" onClick={() => setModelOpen(true)}>
         Add task
       </Button>
-      <SelectButton id="status">
+      {/* <SelectButton id="status">
         <option value="all">ALL</option>
         <option value="incomplete">Incomplete</option>
         <option value="complete">Complete</option>
-      </SelectButton>
+      </SelectButton> */}
       <ToDoModel type="add" modelOpen={modelOpen} setModelOpen={setModelOpen} />
     </StyledHeader>
   );
