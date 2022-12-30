@@ -3,11 +3,20 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from '../slices/todoSlice';
-import styles from '../styles/modules/todoItem.module.scss';
-import { getClasses } from '../utils/getClasses';
-import CheckButton from './CheckButton';
-import ToDoModel from './ToDoModel';
+import { deleteTodo } from '../../slices/todoSlice';
+// import styles from '.../styles/modules/todoItem.module.scss';
+// import styles from '../../styles/modules/todoItem.module.scss';
+import { getClasses } from '../../utils/getClasses';
+import CheckButton from '../CheckButton';
+// import ToDoModel from '../TodoModal/ToDoModal';
+import ToDoModel from '../ToDoModel';
+import {
+  StyledItem,
+  TodoDetails,
+  StyledTexts,
+  StyledTime,
+  StyledTodoActions,
+} from './todoitem.styles';
 
 function TodoItem({ todo }) {
   const dispatch = useDispatch();
@@ -24,26 +33,26 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <div className={styles.item}>
-        <div className={styles.todoDetails}>
+      <StyledItem>
+        <TodoDetails>
           <CheckButton />
-          <div className={styles.texts}>
-            <p
+          <StyledTexts>
+            {/* <p
               className={getClasses([
                 styles.todoText,
                 todo.status === 'complete' && styles['todoText--completed'],
               ])}
             >
               {todo.title}
-            </p>
-            <p className={styles.time}>{todo.time}</p>
+            </p> */}
+            <StyledTime>{todo.time}</StyledTime>
             {/* <p className={styles.time}>
             {format(new Date(todo.time), 'p, MM/dd/yyyy')}
           </p> */}
-          </div>
-        </div>
-        <div className={styles.todoActions}>
-          <div
+          </StyledTexts>
+        </TodoDetails>
+        <StyledTodoActions>
+          {/* <div
             className={styles.icon}
             onClick={handleDelete}
             onKeyDown={handleDelete}
@@ -60,9 +69,9 @@ function TodoItem({ todo }) {
             tabIndex={0}
           >
             <MdEdit />
-          </div>
-        </div>
-      </div>
+          </div> */}
+        </StyledTodoActions>
+      </StyledItem>
       <ToDoModel
         type="update"
         todo={todo}

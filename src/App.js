@@ -9,6 +9,7 @@ import PageTitle from './Components/PageTitle/PageTitle';
 import { GlobalStyle } from './Styled/globalStyle';
 import Wrapper from './Components/Wrapper/Wrapper';
 import AppHeader from './Components/AppHeader/AppHeader';
+// import AppContent from './Components/AppContent/AppContent';
 
 function App() {
   return (

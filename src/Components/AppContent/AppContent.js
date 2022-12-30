@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import TodoItem from './TodoItem';
+import TodoItem from '../TodoItem/TodoItem';
 
 function AppContent() {
   const todoList = useSelector((state) => state.todo.todoList);

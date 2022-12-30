@@ -4,10 +4,10 @@ import { StyledButton, StyledSelect } from './button.styles';
 
 // key(primary): value(primary)
 // this is an object because {}
-const buttonTypes = {
-  primary: 'primary',
-  secondary: 'secondary',
-};
+// const buttonTypes = {
+//   primary: 'primary',
+//   secondary: 'secondary',
+// };
 
 function Button({ children, type, variant, ...rest }) {
   return (

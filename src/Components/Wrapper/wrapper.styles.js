@@ -4,7 +4,7 @@ export const StyledWrapper = styled.div`
   background-color: var(--bg-2);
   padding: 2rem;
   border-radius: 12px;
-  @include smallDeviceSize {
+  /* @include smallDeviceSize {
     padding: 1.5rem;
-  }
+  } */
 `;
