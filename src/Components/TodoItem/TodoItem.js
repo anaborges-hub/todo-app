@@ -4,8 +4,8 @@ import toast from 'react-hot-toast';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../../slices/todoSlice';
-// import styles from '.../styles/modules/todoItem.module.scss';
-// import styles from '../../styles/modules/todoItem.module.scss';
+// import styles from './.../styles/modules/todoItem.module.scss';
+import styles from '../../styles/modules/todoItem.module.scss';
 import { getClasses } from '../../utils/getClasses';
 import CheckButton from '../CheckButton';
 // import ToDoModel from '../TodoModal/ToDoModal';
@@ -37,22 +37,22 @@ function TodoItem({ todo }) {
         <TodoDetails>
           <CheckButton />
           <StyledTexts>
-            {/* <p
+            <p
               className={getClasses([
                 styles.todoText,
                 todo.status === 'complete' && styles['todoText--completed'],
               ])}
             >
               {todo.title}
-            </p> */}
+            </p>
             <StyledTime>{todo.time}</StyledTime>
             {/* <p className={styles.time}>
-            {format(new Date(todo.time), 'p, MM/dd/yyyy')}
-          </p> */}
+              {format(new Date(todo.time), 'p, MM/dd/yyyy')}
+            </p> */}
           </StyledTexts>
         </TodoDetails>
         <StyledTodoActions>
-          {/* <div
+          <div
             className={styles.icon}
             onClick={handleDelete}
             onKeyDown={handleDelete}
@@ -69,7 +69,7 @@ function TodoItem({ todo }) {
             tabIndex={0}
           >
             <MdEdit />
-          </div> */}
+          </div>
         </StyledTodoActions>
       </StyledItem>
       <ToDoModel
