@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button, { SelectButton } from '../Button/Button';
-// import ToDoModel from '../TodoModal/ToDoModal';
-import ToDoModal from '../ToDoModal';
+import ToDoModal from '../TodoModal/ToDoModal';
 import { StyledHeader } from './header.styles';
 
 function AppHeader() {

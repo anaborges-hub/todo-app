@@ -8,8 +8,7 @@ import { deleteTodo } from '../../slices/todoSlice';
 import styles from '../../styles/modules/todoItem.module.scss';
 import { getClasses } from '../../utils/getClasses';
 import CheckButton from '../CheckButton';
-// import ToDoModel from '../TodoModal/ToDoModal';
-import ToDoModal from '../ToDoModal';
+import ToDoModal from '../TodoModal/ToDoModal';
 import {
   StyledItem,
   TodoDetails,
