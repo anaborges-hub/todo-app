@@ -2,6 +2,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import TodoItem from '../TodoItem/TodoItem';
+import { StyledWrapper } from '../Wrapper/wrapper.styles';
+import { StyledContent } from './AppContent.styles';
 
 const container = {
   hidden: { opacity: 1 },
@@ -37,30 +39,23 @@ function AppContent() {
   });
 
   return (
-    <motion.div
-      className={StyleSheet.content__wrapper}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-    >
+    <StyledWrapper variants={container} initial="hidden" animate="visible">
       <AnimatePresence>
         {filteredTodoList && filteredTodoList.length > 0 ? (
           filteredTodoList.map((todo) => (
-            // <motion.div key={todo.id} variants={child}>
-            <TodoItem key={todo.id} todo={todo} />
-            // </motion.div>
+            <motion.div key={todo.id} variants={child}>
+              <TodoItem key={todo.id} todo={todo} />
+            </motion.div>
           ))
         ) : (
-          <motion.p variants={child} className={StyleSheet.emptyText}>
-            No todos
-          </motion.p>
+          <StyledContent>No todos</StyledContent>
         )}
       </AnimatePresence>
-    </motion.div>
+    </StyledWrapper>
     // <div>
-    //   {sortedTodoList && sortedTodoList.length > 0
-    //     ? sortedTodoList.map((todo) => <TodoItem key={todo.id} todo={todo} />)
-    //     : 'no todo found'}
+    // {sortedTodoList && sortedTodoList.length > 0
+    //  ? sortedTodoList.map((todo) => <TodoItem key={todo.id} todo={todo} />)
+    // : 'no todo found'}
     // </div>
   );
 }
