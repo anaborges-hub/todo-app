@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from '../styles/modules/todoItem.module.scss';
+import { StyledSvg, StyledSvgBox } from './checkbtn.styles';
 
 function CheckButton() {
   return (
-    <div className={styles.svgBox}>
-      <svg
-        className={styles.svg}
+    <StyledSvgBox>
+      <StyledSvg
         viewbox="0 0 53 38"
         fill="none"
         xmlns="http://www.w3.org/2080/svg"
@@ -18,8 +17,8 @@ function CheckButton() {
           strokeLinejoin="round"
           strokeLinecap="round"
         />
-      </svg>
-    </div>
+      </StyledSvg>
+    </StyledSvgBox>
   );
 }
 

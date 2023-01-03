@@ -52,3 +52,19 @@ export const StyledTodoActions = styled.div`
   justify-content: center;
   gap: 1rem;
 `;
+
+export const StyledIcon = styled.div`
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: var(--gray-1);
+  color: var(--black-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+  &:hover {
+    background-color: var(--gray-2);
+  }
+`;

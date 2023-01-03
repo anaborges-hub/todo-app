@@ -5,16 +5,18 @@ import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../../slices/todoSlice';
 // import styles from './.../styles/modules/todoItem.module.scss';
-import styles from '../../styles/modules/todoItem.module.scss';
+// import styles from '../../styles/modules/todoItem.module.scss';
 import { getClasses } from '../../utils/getClasses';
-import CheckButton from '../CheckButton';
+import CheckButton from '../CheckButton/CheckButton';
 import ToDoModal from '../TodoModal/ToDoModal';
 import {
   StyledItem,
   TodoDetails,
   StyledTexts,
+  TodoText,
   StyledTime,
   StyledTodoActions,
+  StyledIcon,
 } from './todoitem.styles';
 
 function TodoItem({ todo }) {
@@ -36,39 +38,27 @@ function TodoItem({ todo }) {
         <TodoDetails>
           <CheckButton />
           <StyledTexts>
-            <p
-              className={getClasses([
-                styles.todoText,
-                todo.status === 'complete' && styles['todoText--completed'],
-              ])}
-            >
-              {todo.title}
-            </p>
+            <TodoText>{todo.title}</TodoText>
             <StyledTime>{todo.time}</StyledTime>
-            {/* <p className={styles.time}>
-              {format(new Date(todo.time), 'p, MM/dd/yyyy')}
-            </p> */}
           </StyledTexts>
         </TodoDetails>
         <StyledTodoActions>
-          <div
-            className={styles.icon}
+          <StyledIcon
             onClick={handleDelete}
             onKeyDown={handleDelete}
             role="button"
             tabIndex={0}
           >
             <MdDelete />
-          </div>
-          <div
-            className={styles.icon}
+          </StyledIcon>
+          <StyledIcon
             onClick={handleUpdate}
             onKeyDown={handleUpdate}
             role="button"
             tabIndex={0}
           >
             <MdEdit />
-          </div>
+          </StyledIcon>
         </StyledTodoActions>
       </StyledItem>
       <ToDoModal
