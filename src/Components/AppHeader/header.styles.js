@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   height: 60px;
+  justify-content: space-between;
 `;

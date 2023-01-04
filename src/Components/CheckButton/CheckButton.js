@@ -28,7 +28,7 @@ function CheckButton({ checked, handleCheck }) {
       onClick={() => handleCheck()}
     >
       <StyledSvg
-        viewbox="0 0 53 38"
+        viewBox="0 0 53 38"
         fill="none"
         xmlns="http://www.w3.org/2080/svg"
       >
