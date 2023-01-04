@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Container from './Components/Container/Container';
 import PageTitle from './Components/PageTitle/PageTitle';
 import { GlobalStyle } from './Styled/globalStyle';
-import Wrapper from './Components/Wrapper/Wrapper';
+import Wrapper from './Components/AppWrapper/AppWrapper';
 import AppHeader from './Components/AppHeader/AppHeader';
 import AppContent from './Components/AppContent/AppContent';
 
