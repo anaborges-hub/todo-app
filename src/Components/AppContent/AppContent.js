@@ -1,9 +1,8 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { ContentWrapper, StyledEmptyText } from './AppContent.styles';
 import TodoItem from '../TodoItem/TodoItem';
-import { StyledWrapper } from '../Wrapper/wrapper.styles';
-import { StyledContent } from './AppContent.styles';
 
 const container = {
   hidden: { opacity: 1 },
@@ -39,7 +38,7 @@ function AppContent() {
   });
 
   return (
-    <StyledWrapper variants={container} initial="hidden" animate="visible">
+    <ContentWrapper variants={container} initial="hidden" animate="visible">
       <AnimatePresence>
         {filteredTodoList && filteredTodoList.length > 0 ? (
           filteredTodoList.map((todo) => (
@@ -48,10 +47,10 @@ function AppContent() {
             // </motion.div>
           ))
         ) : (
-          <StyledContent>No todos</StyledContent>
+          <StyledEmptyText variants={child}>No todos</StyledEmptyText>
         )}
       </AnimatePresence>
-    </StyledWrapper>
+    </ContentWrapper>
     // <div>
     // {sortedTodoList && sortedTodoList.length > 0
     //  ? sortedTodoList.map((todo) => <TodoItem key={todo.id} todo={todo} />)
