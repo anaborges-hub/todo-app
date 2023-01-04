@@ -3,14 +3,18 @@ import { StyledButton, StyledSelect } from './button.styles';
 
 // key(primary): value(primary)
 // this is an object because {}
-const buttonTypes = {
-  primary: 'primary',
-  secondary: 'secondary',
-};
+// const buttonTypes = {
+//   primary: 'primary',
+//   secondary: 'secondary',
+// };
 
 function Button({ type, variant = 'primary', children, ...rest }) {
   return (
-    <StyledButton type={type === 'submit' ? 'submit' : 'button'} {...rest}>
+    <StyledButton
+      type={type === 'submit' ? 'submit' : 'button'}
+      variant={variant}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );
@@ -18,7 +22,7 @@ function Button({ type, variant = 'primary', children, ...rest }) {
 
 function SelectButton({ children, id, ...rest }) {
   return (
-    <StyledSelect selected id={id} {...rest}>
+    <StyledSelect id={id} {...rest}>
       {children}
     </StyledSelect>
   );

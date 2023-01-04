@@ -6,7 +6,6 @@ import toast from 'react-hot-toast';
 
 import { AnimatePresence } from 'framer-motion';
 import { addTodo, updateTodo } from '../../slices/todoSlice';
-import { StyledButton } from '../Button/button.styles';
 import {
   ModalBtnContainer,
   ModalCloseButton,
@@ -15,6 +14,7 @@ import {
   ModalFormTitle,
   ModalWrapper,
 } from './modal.styles';
+import Button from '../Button/Button';
 
 const dropIn = {
   hidden: {
@@ -134,15 +134,12 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
                 </select>
               </label>
               <ModalBtnContainer>
-                <StyledButton type="submit" variant="primary">
+                <Button type="submit" variant="primary">
                   {type === 'add' ? 'Add Task' : 'Update Task'}
-                </StyledButton>
-                <StyledButton
-                  variant="secondary"
-                  onClick={() => setModelOpen(false)}
-                >
+                </Button>
+                <Button variant="secondary" onClick={() => setModelOpen(false)}>
                   Cancel
-                </StyledButton>
+                </Button>
               </ModalBtnContainer>
             </ModalForm>
           </ModalContainer>
