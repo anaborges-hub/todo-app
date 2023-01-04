@@ -17,12 +17,10 @@ export const StyledSvgBox = styled.div`
 `;
 
 export const StyledSvg = styled.svg`
-  svg {
-    width: 100%;
-    height: 100%;
-    stroke: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  width: 100%;
+  height: 100%;
+  stroke: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
-
+import { v4 as uuid } from 'uuid';
 import { MdOutlineClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { v4 as uuid } from 'uuid';
+import toast from 'react-hot-toast';
+
 import { addTodo, updateTodo } from '../../slices/todoSlice';
 import { StyledButton } from '../Button/button.styles';
 import {
@@ -18,6 +18,7 @@ import {
 function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
+
   const dispatch = useDispatch();
 
   useEffect(() => {
