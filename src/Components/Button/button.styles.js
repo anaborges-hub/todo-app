@@ -12,8 +12,10 @@ export const StyledButton = styled.button`
   text-transform: capitalize;
   cursor: pointer;
   overflow: hidden;
-  &__select {
-    color: var(--black-2);
+  ${(p) =>
+    p.selected
+      ? `
+  color: var(--black-2);
     font-family: Poppins;
     padding: 1rem;
     border: none;
@@ -21,16 +23,21 @@ export const StyledButton = styled.button`
 
     width: 150px;
     cursor: pointer;
-  }
+  `
+      : ''}
 `;
 
 export const StyledSelect = styled.select`
-  .button--primary {
+  ${(p) =>
+    p.primary
+      ? `
     background-color: var(--primaryPurple);
     color: var(--white);
-  }
-  .button--secondary {
-    background-color: var(--bg-3);
-    color: var(--black-1);
-  }
+  `
+      : ''}
 `;
+
+//     p.secondary`
+// background-color: var(--bg-3);
+//   color: var(--black-1);`}
+// `;

@@ -1,12 +1,8 @@
-// import { format } from 'date-fns';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import { deleteTodo } from '../../slices/todoSlice';
-// import styles from './.../styles/modules/todoItem.module.scss';
-// import styles from '../../styles/modules/todoItem.module.scss';
-import { getClasses } from '../../utils/getClasses';
+import { deleteTodo, updateTodo } from '../../slices/todoSlice';
 import CheckButton from '../CheckButton/CheckButton';
 import ToDoModal from '../TodoModal/ToDoModal';
 import {
@@ -19,9 +15,33 @@ import {
   StyledIcon,
 } from './todoitem.styles';
 
+const child = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 function TodoItem({ todo }) {
   const dispatch = useDispatch();
+  const [checked, setChecked] = useState(false);
   const [updateModelOpen, setUpdateModelOpen] = useState(false);
+
+  useEffect(() => {
+    if (todo.status === 'complete') {
+      setChecked(true);
+    } else {
+      setChecked(false);
+    }
+  }, [todo.status]);
+
+  const handleCheck = () => {
+    setChecked(!checked);
+    dispatch(
+      updateTodo({ ...todo, status: checked ? 'incomplete' : 'complete' })
+    );
+  };
 
   const handleDelete = () => {
     dispatch(deleteTodo(todo.id));
@@ -34,11 +54,13 @@ function TodoItem({ todo }) {
 
   return (
     <>
-      <StyledItem>
+      <StyledItem variants={child}>
         <TodoDetails>
-          <CheckButton />
+          <CheckButton checked={checked} handleCheck={handleCheck} />
           <StyledTexts>
-            <TodoText>{todo.title}</TodoText>
+            <TodoText completed={todo.status === 'complete'}>
+              {todo.title}
+            </TodoText>
             <StyledTime>{todo.time}</StyledTime>
           </StyledTexts>
         </TodoDetails>
@@ -46,8 +68,8 @@ function TodoItem({ todo }) {
           <StyledIcon
             onClick={handleDelete}
             onKeyDown={handleDelete}
-            role="button"
             tabIndex={0}
+            role="button"
           >
             <MdDelete />
           </StyledIcon>
@@ -63,9 +85,9 @@ function TodoItem({ todo }) {
       </StyledItem>
       <ToDoModal
         type="update"
-        todo={todo}
         modalOpen={updateModelOpen}
         setModelOpen={setUpdateModelOpen}
+        todo={todo}
       />
     </>
   );

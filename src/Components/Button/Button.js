@@ -1,13 +1,12 @@
 import React from 'react';
-// import styles from '../styles/modules/button.module.scss';
 import { StyledButton, StyledSelect } from './button.styles';
 
 // key(primary): value(primary)
 // this is an object because {}
-// const buttonTypes = {
-//   primary: 'primary',
-//   secondary: 'secondary',
-// };
+const buttonTypes = {
+  primary: 'primary',
+  secondary: 'secondary',
+};
 
 function Button({ type, variant = 'primary', children, ...rest }) {
   return (
@@ -19,7 +18,7 @@ function Button({ type, variant = 'primary', children, ...rest }) {
 
 function SelectButton({ children, id, ...rest }) {
   return (
-    <StyledSelect id={id} {...rest}>
+    <StyledSelect selected id={id} {...rest}>
       {children}
     </StyledSelect>
   );

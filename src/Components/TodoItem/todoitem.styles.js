@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const StyledItem = styled.div`
+export const StyledItem = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,11 +32,13 @@ export const TodoText = styled.p`
   font-weight: 500;
   font-size: 1.4rem;
   color: var(--black-2);
-
-  &--completed {
-    text-decoration: line-through;
-    opacity: 0.7;
-  }
+  ${(p) =>
+    p.completed
+      ? `
+  text-decoration: line-through; 
+  opacity: 0.7;
+  `
+      : ''}
 `;
 
 export const StyledTime = styled.p`

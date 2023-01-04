@@ -43,9 +43,9 @@ function AppContent() {
       <AnimatePresence>
         {filteredTodoList && filteredTodoList.length > 0 ? (
           filteredTodoList.map((todo) => (
-            <motion.div key={todo.id} variants={child}>
-              <TodoItem key={todo.id} todo={todo} />
-            </motion.div>
+            //   <motion.div key={todo.id} variants={child}>
+            <TodoItem key={todo.id} todo={todo} />
+            // </motion.div>
           ))
         ) : (
           <StyledContent>No todos</StyledContent>

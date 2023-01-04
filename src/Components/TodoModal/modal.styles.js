@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const ModalWrapper = styled.div`
+export const ModalWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +14,7 @@ export const ModalWrapper = styled.div`
   align-items: center;
 `;
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled(motion.div)`
   background-color: var(--bg-2);
   max-width: 500px;
   width: 90%;
@@ -26,7 +27,7 @@ export const ModalContainer = styled.div`
   position: relative;
 `;
 
-export const ModalCloseButton = styled.div`
+export const ModalCloseButton = styled(motion.div)`
   position: absolute;
   top: -10px;
   right: 0;
