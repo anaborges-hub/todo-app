@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { MdOutlineClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
-import toast from 'react-hot-toast';
-
 import { AnimatePresence } from 'framer-motion';
+import toast from 'react-hot-toast';
 import { addTodo, updateTodo } from '../../slices/todoSlice';
 import {
   ModalBtnContainer,
@@ -73,7 +72,7 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
       if (type === 'update') {
         if (todo.title !== title || todo.status !== status) {
           dispatch(updateTodo({ ...todo, title, status }));
-          toast.success('Task updated successfully');
+          toast.success('Task Updated successfully');
         } else {
           toast.error('No changes made');
           return;
@@ -122,10 +121,10 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
                   onChange={(e) => setTitle(e.target.value)}
                 />
               </label>
-              <label htmlFor="status">
+              <label htmlFor="type">
                 Status
                 <select
-                  id="status"
+                  id="type"
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
                 >

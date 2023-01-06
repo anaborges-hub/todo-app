@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import React, { useState, useEffect } from 'react';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../../slices/todoSlice';
@@ -34,7 +34,7 @@ function TodoItem({ todo }) {
     } else {
       setChecked(false);
     }
-  }, [todo.status]);
+  }, [todo.status, updateModelOpen]);
 
   const handleCheck = () => {
     setChecked(!checked);
@@ -66,16 +66,16 @@ function TodoItem({ todo }) {
         </TodoDetails>
         <StyledTodoActions>
           <StyledIcon
-            onClick={handleDelete}
-            onKeyDown={handleDelete}
+            onClick={() => handleDelete()}
+            onKeyDown={() => handleDelete()}
             tabIndex={0}
             role="button"
           >
             <MdDelete />
           </StyledIcon>
           <StyledIcon
-            onClick={handleUpdate}
-            onKeyDown={handleUpdate}
+            onClick={() => handleUpdate()}
+            onKeyDown={() => handleUpdate()}
             role="button"
             tabIndex={0}
           >
@@ -85,7 +85,7 @@ function TodoItem({ todo }) {
       </StyledItem>
       <ToDoModal
         type="update"
-        modalOpen={updateModelOpen}
+        modelOpen={updateModelOpen}
         setModelOpen={setUpdateModelOpen}
         todo={todo}
       />
