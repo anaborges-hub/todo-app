@@ -11,20 +11,21 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Container />
-      <PageTitle>TODO LIST</PageTitle>
-      <Wrapper>
-        <AppHeader />
-        <AppContent />
-      </Wrapper>
-      <Toaster
-        position="bottom-right"
-        toastOptions={{
-          style: {
-            fontsize: '1.4rem',
-          },
-        }}
-      />
+      <Container>
+        <PageTitle>TODO LIST</PageTitle>
+        <Wrapper>
+          <AppHeader />
+          <AppContent />
+        </Wrapper>
+        <Toaster
+        // position="bottom-right"
+        // toastOptions={{
+        //   style: {
+        //     fontsize: '1.4rem',
+        //   },
+        // }}
+        />
+      </Container>
     </>
   );
 }
