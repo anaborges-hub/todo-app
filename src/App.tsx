@@ -18,12 +18,12 @@ function App() {
         <AppContent />
       </Wrapper>
       <Toaster
-        position="bottom-right"
-        toastOptions={{
-          style: {
-            fontsize: '1.4rem',
-          },
-        }}
+      // position="bottom-right"
+      // toastOptions={{
+      //   style: {
+      //     fontsize: '1.4rem',
+      //   },
+      // }}
       />
     </>
   );
