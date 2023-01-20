@@ -8,7 +8,14 @@ import { StyledButton, StyledSelect } from './button.styles';
 //   secondary: 'secondary',
 // };
 
-function Button({ type, variant = 'primary', children, ...rest }) {
+type Props = {
+  type: React.ReactNode;
+  children: React.ReactNode;
+  id: React.ReactNode;
+  variant: string;
+};
+
+function Button({ type, variant = 'primary', children, ...rest }: Props) {
   return (
     <StyledButton
       type={type === 'submit' ? 'submit' : 'button'}
@@ -20,7 +27,7 @@ function Button({ type, variant = 'primary', children, ...rest }) {
   );
 }
 
-function SelectButton({ children, id, ...rest }) {
+function SelectButton({ children, id, ...rest }: Props) {
   return (
     <StyledSelect id={id} {...rest}>
       {children}
