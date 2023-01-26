@@ -6,7 +6,6 @@ type Props = {
 };
 
 function Container({ children }: Props) {
-  console.log(children);
   return <StyledContainer>{children}</StyledContainer>;
 }
 
