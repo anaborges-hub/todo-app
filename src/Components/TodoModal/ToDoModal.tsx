@@ -62,7 +62,7 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }: Props) {
     }
   }, [type, todo, modelOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (title === '') {
       toast.error('Please enter a title.');
@@ -119,7 +119,7 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }: Props) {
               <MdOutlineClose />
             </ModalCloseButton>
 
-            <ModalForm onSubmit={(e) => handleSubmit(e)}>
+            <ModalForm onSubmit={(e: React.SyntheticEvent) => handleSubmit(e)}>
               <ModalFormTitle>
                 {type === 'add' ? 'Add' : 'Update'} TODO
               </ModalFormTitle>
