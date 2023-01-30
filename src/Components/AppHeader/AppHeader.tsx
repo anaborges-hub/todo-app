@@ -15,11 +15,8 @@ function AppHeader() {
 
   const updateFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setFilterStatus(e.target.value);
-    console.log('ola', e.target.value);
-    // all, incomplete, complete
     dispatch(updateFilterStatus(e.target.value));
   };
-  console.log(status);
 
   return (
     <StyledHeader>
@@ -35,7 +32,17 @@ function AppHeader() {
         <option value="incomplete">Incomplete</option>
         <option value="complete">Complete</option>
       </SelectButton>
-      <ToDoModal type="add" modelOpen={modelOpen} setModelOpen={setModelOpen} />
+      <ToDoModal
+        type="add"
+        modelOpen={modelOpen}
+        setModelOpen={setModelOpen}
+        todo={{
+          id: '',
+          status: '',
+          title: '',
+          time: '',
+        }}
+      />
     </StyledHeader>
   );
 }

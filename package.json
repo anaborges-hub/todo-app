@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "babel-plugin-styled-components": "^2.0.7",

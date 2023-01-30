@@ -27,7 +27,7 @@ const child = {
 function AppContent() {
   const todoList = useAppSelector((state) => state.todo.todoList);
   const filterStatus = useAppSelector((state) => state.todo.filterStatus);
-  console.log(todoList);
+  // console.log(todoList);
 
   const sortedTodoList = [...todoList];
   sortedTodoList.sort(

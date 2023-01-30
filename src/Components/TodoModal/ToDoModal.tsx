@@ -14,6 +14,14 @@ import {
   ModalWrapper,
 } from './modal.styles';
 import Button from '../Button/Button';
+import type { Todo } from '../TodoItem/TodoItem';
+
+type Props = {
+  type: 'add' | 'update';
+  modelOpen: boolean;
+  setModelOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  todo: Todo;
+};
 
 const dropIn = {
   hidden: {
@@ -36,10 +44,13 @@ const dropIn = {
   },
 };
 
-function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
+function ToDoModal({ type, modelOpen, setModelOpen, todo }: Props) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
+  console.log('todo', todo);
+  console.log('modelOpen', modelOpen);
+  console.log('setModelOpen', setModelOpen);
 
   useEffect(() => {
     if (type === 'update' && todo) {

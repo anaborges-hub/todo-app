@@ -23,7 +23,19 @@ const child = {
   },
 };
 
-function TodoItem({ todo }) {
+type Props = {
+  key: 'string';
+  todo: Todo;
+};
+
+export type Todo = {
+  id: string;
+  status: string;
+  title: string;
+  time: string;
+};
+
+function TodoItem({ todo }: Props) {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const [updateModelOpen, setUpdateModelOpen] = useState(false);
