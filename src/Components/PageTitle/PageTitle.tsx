@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyledTitle } from './pagetitle.styles';
 
-function PageTitle({ children, ...rest }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+function PageTitle({ children, ...rest }: Props) {
   return <StyledTitle {...rest}>{children}</StyledTitle>;
 }
 

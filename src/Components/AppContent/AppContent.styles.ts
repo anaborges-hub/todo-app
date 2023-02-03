@@ -5,13 +5,9 @@ export const ContentWrapper = styled(motion.div)`
   background-color: var(--bg-2);
   padding: 2rem;
   border-radius: 12px;
-  /* @include smallDeviceSize {
-    padding: 1.5rem;
-  } */
 `;
 
 export const StyledEmptyText = styled(motion.p)`
-  // display: inline-block;
   font-size: 1.6rem;
   font-weight: 500;
   color: var(--black-2);

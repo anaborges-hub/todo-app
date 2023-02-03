@@ -1,6 +1,7 @@
-import { AnimatePresence } from 'framer-motion';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { AnimatePresence } from 'framer-motion';
+import { useAppSelector } from '../../app/hooks';
+
 import { ContentWrapper, StyledEmptyText } from './AppContent.styles';
 import TodoItem from '../TodoItem/TodoItem';
 
@@ -24,11 +25,15 @@ const child = {
 };
 
 function AppContent() {
-  const todoList = useSelector((state) => state.todo.todoList);
-  const filterStatus = useSelector((state) => state.todo.filterStatus);
+  const todoList = useAppSelector((state) => state.todo.todoList);
+  const filterStatus = useAppSelector((state) => state.todo.filterStatus);
+  // console.log(todoList);
 
   const sortedTodoList = [...todoList];
-  sortedTodoList.sort((a, b) => new Date(b.time) - new Date(a.time));
+  sortedTodoList.sort(
+    (a, b) => new Date(b.time).valueOf() - new Date(a.time).valueOf()
+    // https://stackoverflow.com/questions/36560806/the-left-hand-side-of-an-arithmetic-operation-must-be-of-type-any-number-or
+  );
 
   const filteredTodoList = sortedTodoList.filter((item) => {
     if (filterStatus === 'all') {

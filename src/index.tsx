@@ -7,7 +7,7 @@ import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import { store } from './app/store';
-import App from './App.tsx';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>

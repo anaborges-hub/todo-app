@@ -14,6 +14,14 @@ import {
   ModalWrapper,
 } from './modal.styles';
 import Button from '../Button/Button';
+import type { Todo } from '../TodoItem/TodoItem';
+
+type Props = {
+  type: 'add' | 'update';
+  modelOpen: boolean;
+  setModelOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  todo: Todo;
+};
 
 const dropIn = {
   hidden: {
@@ -36,10 +44,13 @@ const dropIn = {
   },
 };
 
-function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
+function ToDoModal({ type, modelOpen, setModelOpen, todo }: Props) {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
+  console.log('todo', todo);
+  console.log('modelOpen', modelOpen);
+  console.log('setModelOpen', setModelOpen);
 
   useEffect(() => {
     if (type === 'update' && todo) {
@@ -51,7 +62,7 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
     }
   }, [type, todo, modelOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (title === '') {
       toast.error('Please enter a title.');
@@ -108,7 +119,7 @@ function ToDoModal({ type, modelOpen, setModelOpen, todo }) {
               <MdOutlineClose />
             </ModalCloseButton>
 
-            <ModalForm onSubmit={(e) => handleSubmit(e)}>
+            <ModalForm onSubmit={(e: React.SyntheticEvent) => handleSubmit(e)}>
               <ModalFormTitle>
                 {type === 'add' ? 'Add' : 'Update'} TODO
               </ModalFormTitle>

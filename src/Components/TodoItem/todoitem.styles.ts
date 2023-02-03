@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
+type TodoTextProps = {
+  completed: boolean;
+};
+
 export const StyledItem = styled(motion.div)`
   display: flex;
   align-items: center;
@@ -27,7 +31,7 @@ export const StyledTexts = styled.div`
   overflow: hidden;
 `;
 
-export const TodoText = styled.p`
+export const TodoText = styled.p<TodoTextProps>`
   word-break: break-all;
   font-weight: 500;
   font-size: 1.4rem;
