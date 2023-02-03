@@ -1,24 +1,22 @@
 import React from 'react';
 import { StyledButton, StyledSelect } from './button.styles';
 
-// key(primary): value(primary)
-// this is an object because {}
-// const buttonTypes = {
-//   primary: 'primary',
-//   secondary: 'secondary',
-// };
-
 type Props = {
   type?: 'submit' | 'button';
   children: React.ReactNode;
-  id?: React.ReactNode;
-  variant?: string;
+  id?: string;
+  variant?: 'primary' | 'secondary';
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   value?: string;
 };
 
-function Button({ type, variant = 'primary', children, ...rest }: Props) {
+function Button({
+  type = 'button',
+  variant = 'primary',
+  children,
+  ...rest
+}: Props) {
   return (
     <StyledButton type={type} variant={variant} {...rest}>
       {children}
