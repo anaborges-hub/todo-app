@@ -18,16 +18,21 @@ const boxVariants = {
   unchecked: { background: 'var(--gray-2)', transition: { duration: 0.1 } },
 };
 
-function CheckButton({ checked, handleCheck }) {
+type Props = {
+  checked: boolean;
+  handleCheck: () => void;
+};
+
+function CheckButton({ checked, handleCheck }: Props) {
   const pathLength = useMotionValue(0);
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
   return (
     <StyledSvgBox
       animate={checked ? 'checked' : 'unchecked'}
       variants={boxVariants}
-      onClick={() => handleCheck()}
+      onClick={handleCheck}
     >
-      <StyledSvg
+      <motion.svg
         viewBox="0 0 53 38"
         fill="none"
         xmlns="http://www.w3.org/2080/svg"
@@ -43,7 +48,7 @@ function CheckButton({ checked, handleCheck }) {
           strokeLinejoin="round"
           strokeLinecap="round"
         />
-      </StyledSvg>
+      </motion.svg>
     </StyledSvgBox>
   );
 }
