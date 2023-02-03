@@ -1,14 +1,20 @@
 import React from 'react';
 import { StyledButton, StyledSelect } from './button.styles';
 
-type Props = {
+type ButtonProps = {
   type?: 'submit' | 'button';
   children: React.ReactNode;
-  id?: string;
   variant?: 'primary' | 'secondary';
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLButtonElement>) => void;
   value?: string;
+};
+
+type SelectProps = {
+  id?: string;
+  children: React.ReactNode;
+  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  value: string;
 };
 
 function Button({
@@ -16,7 +22,7 @@ function Button({
   variant = 'primary',
   children,
   ...rest
-}: Props) {
+}: ButtonProps) {
   return (
     <StyledButton type={type} variant={variant} {...rest}>
       {children}
@@ -24,7 +30,7 @@ function Button({
   );
 }
 
-function SelectButton({ children, id, ...rest }: Props) {
+function SelectButton({ children, id, ...rest }: SelectProps) {
   return (
     <StyledSelect id={id} {...rest}>
       {children}

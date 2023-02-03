@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+type Props = {
+  variant: 'primary' | 'secondary';
+};
+
+export const StyledButton = styled.button<Props>`
   display: inline-block;
   height: auto;
   padding: 0.8rem 2rem;
