@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyledAppWrapper } from './AppWrapper.styles';
 
-function Wrapper({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+function Wrapper({ children }: Props) {
   return <StyledAppWrapper>{children}</StyledAppWrapper>;
 }
 
