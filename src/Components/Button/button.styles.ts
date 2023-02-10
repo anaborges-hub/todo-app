@@ -49,7 +49,6 @@ export const StyledSelect = styled.select`
   padding: 1rem;
   border: none;
   background-color: var(--bg-3);
-
   width: 150px;
   cursor: pointer;
 `;
